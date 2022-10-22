@@ -1,0 +1,49 @@
+print("")
+print("\t\tPROGRAMMED BY JOSEPH Z. BATURIANO")
+print("\t\tASSIGNMENT#1 BSCPE 2-2\n")
+
+
+str1 = "SEP"
+print_S = [[" " for i in range(5)] for j in range(7)]
+print_E = [[" " for i in range(5)] for j in range(7)]
+print_P = [[" " for i in range(5)] for j in range(7)]
+print_H = [[" " for i in range(5)] for j in range(7)]
+
+# code for S
+for row in range(7):
+    for col in range(5):
+        if ((row == 0 or row == 3 or row == 6) and (col > 0 and col < 4)) or (col == 0 and (row > 0 and row < 3)) or (col == 4 and (row > 3 and row < 6)):
+            print_S[row][col] = "*"
+
+# code for E
+for row in range(7):
+    for col in range(5):
+        if col == 0 or ((row == 0 or row == 3 or row == 6) and (col > 0)):
+            print_E[row][col] = "*"
+
+# code for P
+for row in range(7):
+    for col in range(5):
+        if (col == 0 or (col == 4 and (row == 1 or row == 2)) or (row == 0 or row == 3) and (col > 0 and col < 4)):
+            print_P[row][col] = "*"
+
+# code for H
+for row in range(7):
+    for col in range(5):
+        if col == 0 or col == 4 or (row == 3 and (col > 0 and col < 4)):
+            print_H[row][col] = "*"
+
+for i in range(7):
+    for j in range(5):
+        print(print_S[i][j], end=" ")
+    print(end=" ")
+    for j in range(5):
+        print(print_E[i][j], end=" ")
+    print(end="  ")
+    for j in range(5):
+        print(print_P[i][j], end=" ")
+    print(end="  ")
+    for j in range(5):
+        print(print_H[i][j], end=" ")
+    print()
+
